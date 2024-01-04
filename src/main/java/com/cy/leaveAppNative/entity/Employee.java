@@ -5,6 +5,8 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
@@ -66,11 +68,16 @@ public class Employee {
     @Column(name="firstTimeLogin")
     private boolean isFirstTimeLogin;
 
+    @Column(name="manager_id")
+    private Long managerId;
+
     //MANY TO ONE
+    @ManyToOne
+    @JoinColumn(name = "manager_id",insertable=false, updatable=false)
+    private Employee manager;
 
     //ONE TO MANY
     @OneToMany(mappedBy = "employee")
     private List<LeaveBalance> leaveBalanceList;
-    
-    
+
 }

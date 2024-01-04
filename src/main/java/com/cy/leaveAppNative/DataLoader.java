@@ -28,6 +28,7 @@ public class DataLoader implements ApplicationRunner {
         // initialRole();
         // initialLeaveType();
         initialAdmin();
+        // initialManager();
     }
 
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
@@ -42,26 +43,51 @@ public class DataLoader implements ApplicationRunner {
                 Employee adminDetails = new Employee();
                 adminDetails.setActive(true);
                 adminDetails.setEmail("admin@gmail.com");
-                adminDetails.setBod("1990-5-6");
+                adminDetails.setBod("1978/09/02");
                 adminDetails.setPassword("Pass");
-                adminDetails.setEmpName("admin");
+                adminDetails.setEmpName("adminKEN");
                 adminDetails.setAddress("134, jln 33");
                 adminDetails.setMaritalStatus("married");
                 adminDetails.setPhoneNo("0105613876");
                 adminDetails.setEmploymentStatus("admin account");
                 adminDetails.setCreatedDate(LocalDateTime.now().format(formatter));
                 adminDetails.setRoleName("ADMIN");
+                adminDetails.setManagerId(1L);
                 employeeRepository.save(adminDetails);
-
-                // EmployeeRole tmp = new EmployeeRole();
-                // tmp.setEmployee(adminDetails);
-                // tmp.setRole(roleRepository.findByRoleName("ADMIN")
-                //         .orElseThrow( () -> new EntityNotFoundException("ADMIN not found")));
-                // tmp.setAssignedDate(LocalDateTime.now().format(formatter));
-                // employeeRepository.save(adminDetails);
-                // employeeRoleRepository.save(tmp);
                 System.out.println("admin created");
                 return adminDetails;
+            }
+        }
+        catch (Exception e){
+            System.out.println(e);
+            throw e;
+        }
+    }
+
+    @SneakyThrows
+    private Employee initialManager(){
+        try{
+            {
+                if(!employeeRepository.findAll().isEmpty()){
+                    return null;
+                }
+
+                Employee managerDetails = new Employee();
+                managerDetails.setActive(true);
+                managerDetails.setEmail("manager@gmail.com");
+                managerDetails.setBod("1990-5-6");
+                managerDetails.setPassword("Pass");
+                managerDetails.setEmpName("manager");
+                managerDetails.setAddress("134, jln 33");
+                managerDetails.setMaritalStatus("single");
+                managerDetails.setPhoneNo("0105624876");
+                managerDetails.setEmploymentStatus("Employed");
+                managerDetails.setCreatedDate(LocalDateTime.now().format(formatter));
+                managerDetails.setRoleName("MANAGER");
+                managerDetails.setManagerId(2L);
+                employeeRepository.save(managerDetails);
+                System.out.println("manager created");
+                return managerDetails;
             }
         }
         catch (Exception e){
