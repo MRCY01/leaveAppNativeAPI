@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-LeaveAppNativeApplication<leaveAppNative>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.cy.leaveAppNative.LeaveAppNativeApplication",
+            "projectName": "leaveAppNative",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
