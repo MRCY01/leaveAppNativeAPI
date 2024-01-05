@@ -47,7 +47,6 @@ public class DataLoader implements ApplicationRunner {
                 adminDetails.setPassword("Pass");
                 adminDetails.setEmpName("adminKEN");
                 adminDetails.setAddress("134, jln 33");
-                adminDetails.setMaritalStatus("married");
                 adminDetails.setPhoneNo("0105613876");
                 adminDetails.setEmploymentStatus("admin account");
                 adminDetails.setCreatedDate(LocalDateTime.now().format(formatter));
@@ -79,7 +78,6 @@ public class DataLoader implements ApplicationRunner {
                 managerDetails.setPassword("Pass");
                 managerDetails.setEmpName("manager");
                 managerDetails.setAddress("134, jln 33");
-                managerDetails.setMaritalStatus("single");
                 managerDetails.setPhoneNo("0105624876");
                 managerDetails.setEmploymentStatus("Employed");
                 managerDetails.setCreatedDate(LocalDateTime.now().format(formatter));

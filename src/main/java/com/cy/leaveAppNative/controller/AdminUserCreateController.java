@@ -1,38 +1,38 @@
 package com.cy.leaveAppNative.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
 
 import com.cy.leaveAppNative.entity.Employee;
 import com.cy.leaveAppNative.exeption.ServiceErrorResponse;
 import com.cy.leaveAppNative.exeption.ServiceException;
 import com.cy.leaveAppNative.jwt.AuthService;
-import com.cy.leaveAppNative.reqres.UpdateProfileReponse;
-import com.cy.leaveAppNative.reqres.UpdateProfileRequest;
-import com.cy.leaveAppNative.service.UpdateProfileService;
 
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.Valid;
 import lombok.SneakyThrows;
+import com.cy.leaveAppNative.reqres.AdminUserCreateRequest;
+import com.cy.leaveAppNative.reqres.AdminUserCreateResponse;
+import com.cy.leaveAppNative.service.AdminUserCreateService;
 
 @RestController
-public class UpdateProfileController {
+public class AdminUserCreateController {
     @Autowired
     AuthService authService;
     @Autowired
-    UpdateProfileService updateProfileService ;
+    AdminUserCreateService adminUserCreateService;
 
-    @PostMapping(path = "/employee/profile/update")
+    @PostMapping(path = "/admin/user/create")
     @SneakyThrows
-    public UpdateProfileReponse updateProfile(@Valid @RequestBody UpdateProfileRequest request) {
+    public AdminUserCreateResponse updateProfile(@Valid @RequestBody AdminUserCreateRequest request) {
         Employee user = authService.getUser(request.getToken());
         request.setUser(user);
-        return updateProfileService.updateProfile(request);
+        return adminUserCreateService.userCreate(request);
     }
 
     // EXCEPTION

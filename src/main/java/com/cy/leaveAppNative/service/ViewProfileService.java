@@ -28,7 +28,6 @@ public class ViewProfileService {
         response.setBod(user.getBod());
         response.setStatus(user.getEmploymentStatus());
         response.setPhone(user.getPhoneNo());
-        response.setMaritualStatus(user.getMaritalStatus());
         response.setAddress(user.getAddress());
         response.setRole(user.getRoleName());
         // response.setManagerId(user.getManagerId());

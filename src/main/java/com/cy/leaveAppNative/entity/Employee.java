@@ -24,6 +24,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Table(name = "employees")
 public class Employee {
+    
     @jakarta.persistence.Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -39,8 +40,8 @@ public class Employee {
     @Column(name = "created_date")
     private String createdDate;
     
-    @Column(name = "approved_date")
-    private String approvedDate;
+    // @Column(name = "approved_date")
+    // private String approvedDate;
     
     @NotBlank
     @Column(name= "password", nullable = false)
@@ -52,8 +53,8 @@ public class Employee {
     @Column(name = "address", nullable = false)
     private String address;
     
-    @Column(name = "marital_status", nullable = false)
-    private String maritalStatus;
+    // @Column(name = "marital_status", nullable = false)
+    // private String maritalStatus;
     
     @NotBlank
     @Column(name = "email", nullable = false)
@@ -72,9 +73,9 @@ public class Employee {
     private Long managerId;
 
     //MANY TO ONE
-    @ManyToOne
-    @JoinColumn(name = "manager_id",insertable=false, updatable=false)
-    private Employee manager;
+    // @ManyToOne
+    // @JoinColumn(name = "manager_id",insertable=false, updatable=false)
+    // private Employee manager;
 
     //ONE TO MANY
     @OneToMany(mappedBy = "employee")

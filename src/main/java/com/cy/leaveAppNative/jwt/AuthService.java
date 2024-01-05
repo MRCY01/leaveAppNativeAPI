@@ -59,7 +59,7 @@ public class AuthService {
         String userId = jwtUtil.extractUserId(token);
 
         Employee employee = employeeRepository.findById(Long.parseLong(userId))
-                .orElseThrow(()->new EntityNotFoundException());
+                .orElseThrow(()->new EntityNotFoundException("employee not found"));
 
 
         return employee;

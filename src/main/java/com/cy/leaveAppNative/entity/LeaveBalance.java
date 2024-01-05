@@ -19,6 +19,9 @@ public class LeaveBalance {
     @Column(name = "id")
     private Long id;
 
+    @Column(name = "leave_balance_name")
+    private String name;
+
     @Column(name = "balance")
     private String balance;
 
