@@ -29,7 +29,7 @@ public class AdminRetrieveProfileService {
 
         try{
             Employee user = request.getUser();
-            if(!authService.hasRole(user,"ADMIN")){
+            if(!authService.checkRole(user,"ADMIN")){
                 throw new ServiceException("user is not admin");
             }
             if(employeeRepository.findAll().isEmpty()){
