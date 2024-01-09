@@ -73,7 +73,7 @@ public class AuthService {
         return !roleName.equals(role);
     }
 
-    public boolean hasRole(Employee employee, String role){
+    public boolean checkRole(Employee employee, String role){
         if(employee==null){
             return false;
         }

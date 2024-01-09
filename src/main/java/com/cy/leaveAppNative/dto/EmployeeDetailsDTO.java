@@ -14,11 +14,9 @@ public class EmployeeDetailsDTO {
     private String employeeName;
     private String email;
     private String createdDate;
-    private String approvedDate;
     private boolean active;
     private String address;
     private String bod;
-    private String maritalStatus;
     private String phone;
     private String role;
 }
