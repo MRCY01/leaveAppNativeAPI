@@ -1,0 +1,15 @@
+LOOSE DECOUPLING
+    - By having a constructor, we can avoid the direct dependency within 2 classes
+    - This can help so that any changes of class B in class A will not affect the original class
+
+DI(Dependency Injection)
+    -Spring uses dependency injection to wire the beans together. 
+    - When one bean depends on another bean, Spring will inject the dependent bean into the dependent class. 
+    - This can be done through 
+        constructor injection, 
+        setter injection, or 
+        field injection (using @Autowired)
+    
+INSTANTIATED
+    - creating a new Object in the heap memory
+    - Example: using 'new' keyword

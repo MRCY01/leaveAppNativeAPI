@@ -1,0 +1,7 @@
+SPRING CONTAINER
+    - manage lifecycle of SPRING BEAN and other BEAN configured in configuration
+    - When initialized, Spring bean will also instantiated
+    - Spring bean in the container wired tgt and injected with their dependency, promote loose coupling and modularity
+
+    - Spring Container and Spring Bean tgt form the core of Spring framework IOC and DI 
+    

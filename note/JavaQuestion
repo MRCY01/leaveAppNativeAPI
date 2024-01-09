@@ -1,0 +1,62 @@
+Why Java is not 100% Object-oriented?
+
+Why pointers are not used in Java? 
+    * Mostly asked in java interview questions and Answers in MNC to check you basic knowledge of java and programming languages and logics behind them.
+
+What is JIT compiler in Java?
+
+Why String is immutable in java?
+    - In JAVA, when a String is created in stack(String s = "hello"), it will first check inside a string pool
+    - if the string exists, new reference(for this case,"s") will be assigned to the String in the String pool
+    - else new String object will be instantiated and stored in the pool (String internment)
+
+What is a marker interface?
+    - marker interface refers to a interface that doesnt have any method implement
+    - it also doesnt contain any behaviour
+    - it is mostly used as a marker, marking the attribute of that class
+
+Can you override a private or static method in Java?
+    - No.
+    - Method overriding is like replacing the method with the method u declared 
+        Example:
+        public class Car extends Vehicles {
+            @Override ==>override the method drive() in Vehicles
+            public void drive(){
+                system.out.println("vroom");
+            }
+        }
+    - private method means the method is not accessible by any class call other than the class it code itself
+    - static method means that the method is fixed throught all the method call
+    - so both of them cant be override
+
+Does “finally” always execute in Java?
+    - "finally" is used with try and catch block
+    - It will always execute regardless the exeption
+    - Usually for cleanup resource or close up connection after all the process in try catch block finish execute
+    - Normaly it will be true, but with one exception, when the system is terminated forcefully or intentionally
+
+What Methods Does the Object Class Have?
+    - Usually all the methods can be find in IDE shortcut key
+        getClass(), wait(), etc.
+
+How Can You Make a Class Immutable?
+    - class immutable means that the state of the Object created by the class cannot be changed after they are created
+        Example:
+        Car car1 = new Car(); ==> car1 is created in heap, and it is final based on class Car
+    - It also affect the variable inside the class
+    - Use 'final' key word to indicate that it cannot be changed
+    - Example
+        public final class Car{ ==> means class Car cant be modified when subclass by other
+            private final String name; ==> means String name cant be modified, read-only
+            // public void String setName(){} ==> this is forbidden to avoid other class to modified the value 'name'
+            public Car(String name){
+                this.name = name; ==> all the field must included in constructor, so that it refer back to the final value
+            }
+        }
+
+What is singleton class in Java and how can we make a class singleton?
+    - Singleton class is a class that only allows one instance of itself to be created throughout the whole application lifecycle
+    - For example, Spring Bean
+        - all the service that injected with the bean shared the same bean
+    - Singleton class will still be terminated when the application is terminated
+        

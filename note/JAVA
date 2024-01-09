@@ -1,0 +1,30 @@
+________________________
+
+String is immutable(cant be modified) in JAVA
+    - In Java, String is maintain in a pool call as String pool
+    - when String is created in stack, it will go check if the String exists in the pool
+        Example:
+        String name = "David"
+        - Check "David" in the String pool
+        - if exists, "name" is pointed to the address of the String in the pool
+        - else created a new String Object and added to the pool (String internment)
+
+    - noted that String that is created in heap ( String name = new String("David")) doesnt go through all the process above
+
+    Pros:
+        - immutable provides more security as user cant modified the string 
+        
+________________________
+
+What happen when class is coded?
+public class Car{ ==> blueprint of Car,will not used any memory if not used due to JVM GarbageCollect
+    String name = "toyota"; ==> check pool, (exists)reference to String in pool, (else) created and add in pool
+    public void drive(){ ==> blueprint of drive(),will not used any memory if not used due to JVM GarbageCollect
+        system.out.println("free"); 
+    }
+}
+
+Car car = new Car(); ==> A new Object is instantiated, tgt with drive(), stored in heap
+car.drive() ==> when method call, stored in stack, then when it finish, removed from stack
+
+________________________
