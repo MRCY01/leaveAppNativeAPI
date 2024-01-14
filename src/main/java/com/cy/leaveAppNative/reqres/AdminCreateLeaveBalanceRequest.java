@@ -1,5 +1,4 @@
 package com.cy.leaveAppNative.reqres;
-
 import com.cy.leaveAppNative.entity.Employee;
 
 import lombok.AllArgsConstructor;
@@ -11,7 +10,14 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class AdminRetrieveLeaveBalanceRequest {
-    private String token;
+public class AdminCreateLeaveBalanceRequest {
     private Employee user;
+    private String token;
+
+    private String leaveBalanceName;
+    private String leaveType;
+    private String empEmail;
+    private String balance;
+    private String expiryDate;
+
 }

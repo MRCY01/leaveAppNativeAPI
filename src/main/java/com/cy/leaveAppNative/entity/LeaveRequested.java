@@ -19,7 +19,7 @@ public class LeaveRequested {
     private Long id;
 
     @Column(name = "date_apply")
-    private Date applyDate;
+    private String applyDate;
 
     @Column(name = "reason")
     private String reason;
@@ -36,6 +36,9 @@ public class LeaveRequested {
     @Column(name = "rejected_reason")
     private String rejectedReason;
 
+    @Column(name= "halfday")
+    private String halfday;
+
     //MANY TO ONE
     @ManyToOne
     @JoinColumn(name = "leave_balance_id")
@@ -44,9 +47,5 @@ public class LeaveRequested {
     @ManyToOne
     @JoinColumn(name = "emp_id")
     private Employee empId;
-
-    @ManyToOne
-    @JoinColumn(name = "manager_id")
-    private Employee managerId;
 
 }

@@ -11,7 +11,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class AdminRetrieveLeaveBalanceRequest {
-    private String token;
+public class RetrieveLeaveHistoryRequest {
     private Employee user;
+    private String token;
 }

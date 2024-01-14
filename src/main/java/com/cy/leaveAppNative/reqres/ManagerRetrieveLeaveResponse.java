@@ -2,20 +2,20 @@ package com.cy.leaveAppNative.reqres;
 
 import java.util.List;
 
-import com.cy.leaveAppNative.dto.LeaveBalanceDTO;
+import com.cy.leaveAppNative.dto.LeaveRequestDTO;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Setter
 @Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class AdminRetrieveLeaveBalanceResponse {
-    private List<LeaveBalanceDTO> leaveBalanceList;
-    private String totalLeave;
+public class ManagerRetrieveLeaveResponse {
     private String message;
     private String statusCode;
+    
+    private List<LeaveRequestDTO> requestedList;
 }

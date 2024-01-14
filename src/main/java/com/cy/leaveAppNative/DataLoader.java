@@ -7,7 +7,9 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
 import com.cy.leaveAppNative.entity.Employee;
+import com.cy.leaveAppNative.entity.LeaveBalance;
 import com.cy.leaveAppNative.repo.EmployeeRepository;
+import com.cy.leaveAppNative.repo.LeaveBalanceRepository;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -21,14 +23,14 @@ public class DataLoader implements ApplicationRunner {
 
     @Autowired
     private EmployeeRepository employeeRepository;
+    @Autowired
+    private LeaveBalanceRepository leaveBalanceRepository;
     // @Autowired
     // private LeaveTypeRepository leaveTypeRepository;
 
     public void run(ApplicationArguments args) {
         // initialRole();
-        // initialLeaveType();
         initialAdmin();
-        // initialManager();
     }
 
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
@@ -55,37 +57,6 @@ public class DataLoader implements ApplicationRunner {
                 employeeRepository.save(adminDetails);
                 System.out.println("admin created");
                 return adminDetails;
-            }
-        }
-        catch (Exception e){
-            System.out.println(e);
-            throw e;
-        }
-    }
-
-    @SneakyThrows
-    private Employee initialManager(){
-        try{
-            {
-                if(!employeeRepository.findAll().isEmpty()){
-                    return null;
-                }
-
-                Employee managerDetails = new Employee();
-                managerDetails.setActive(true);
-                managerDetails.setEmail("manager@gmail.com");
-                managerDetails.setBod("1990-5-6");
-                managerDetails.setPassword("Pass");
-                managerDetails.setEmpName("manager");
-                managerDetails.setAddress("134, jln 33");
-                managerDetails.setPhoneNo("0105624876");
-                managerDetails.setEmploymentStatus("Employed");
-                managerDetails.setCreatedDate(LocalDateTime.now().format(formatter));
-                managerDetails.setRoleName("MANAGER");
-                managerDetails.setManagerId(2L);
-                employeeRepository.save(managerDetails);
-                System.out.println("manager created");
-                return managerDetails;
             }
         }
         catch (Exception e){

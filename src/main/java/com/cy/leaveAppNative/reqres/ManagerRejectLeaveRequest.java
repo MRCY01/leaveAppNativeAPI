@@ -11,7 +11,10 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class AdminRetrieveLeaveBalanceRequest {
-    private String token;
+public class ManagerRejectLeaveRequest {
     private Employee user;
+    private String token;
+
+    private String leaveRequestId;
+    private String rejectReason;
 }

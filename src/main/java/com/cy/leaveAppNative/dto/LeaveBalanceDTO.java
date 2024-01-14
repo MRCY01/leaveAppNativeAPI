@@ -10,6 +10,14 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class LeaveBalanceDTO {
-    private Long id;
-    
+    private Long leaveBalanceId;
+    private String leaveName;
+    private String balance;
+    private String leaveType;
+    private String expiryDate;
+    private String empId;
+    private String empName;
+    private String empEmail;
+    private String totalLeave;
+
 }
