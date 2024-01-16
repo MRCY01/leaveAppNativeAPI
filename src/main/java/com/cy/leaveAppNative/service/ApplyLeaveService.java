@@ -45,24 +45,26 @@ public class ApplyLeaveService {
             if(calDays<0){
                 throw new ServiceException("exceed balance for the leave");
             }
+
+            
             
             List<LeaveApplyDTO> leaveApplyDTOList = request.getLeaveApplyDTOList();
+            LeaveRequested leaveRequested = new LeaveRequested();
             for(LeaveApplyDTO l: leaveApplyDTOList){
-                LeaveRequested leaveRequested = new LeaveRequested();
                 leaveRequested.setEmpId(request.getUser());
                 leaveRequested.setStatus("Pending Approve");
                 leaveRequested.setLeaveBalance(leaveBalance);
                 leaveRequested.setSubmitDate(dtf.format(LocalDateTime.now()));
                 String dateApplied = l.getDateApply();
-                if(leaveRequestRepository.existsByEmpIdAndApplyDate(request.getUser(), dateApplied)){
+                if(leaveRequestRepository.existsByEmpIdAndManagerApproveIsTrueAndApplyDate(request.getUser(), dateApplied)){
                     throw new ServiceException("date is applied before");
                 }
                 leaveRequested.setApplyDate(l.getDateApply());
                 leaveRequested.setHalfday(l.getHalfDay());
                 leaveRequested.setReason(l.getReason());
                 
-                leaveRequestRepository.save(leaveRequested);
             }
+            leaveRequestRepository.save(leaveRequested);
             leaveBalance.setBalance(String.valueOf(calDays));
             leaveBalanceRepository.save(leaveBalance);
             response.setMessage("successfully apply");

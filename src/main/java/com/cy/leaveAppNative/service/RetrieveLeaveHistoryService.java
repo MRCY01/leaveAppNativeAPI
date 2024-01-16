@@ -45,7 +45,7 @@ public class RetrieveLeaveHistoryService {
                     leaveHistoryDTO.setReason(l.getReason());
                     leaveHistoryDTO.setRejectedReason(l.getRejectedReason());
                     leaveHistoryDTO.setStatus(l.getStatus());
-                    leaveHistoryDTO.setHalfday(l.getHalfday());
+                    leaveHistoryDTO.setHalfday(l.getHalfday()); 
 
                     leaveHistoryDTOList.add(leaveHistoryDTO);
                 }
@@ -58,4 +58,5 @@ public class RetrieveLeaveHistoryService {
             }
         return response;
     }
+
 }

@@ -40,9 +40,6 @@ public class Employee {
     @Column(name = "created_date")
     private String createdDate;
     
-    // @Column(name = "approved_date")
-    // private String approvedDate;
-    
     @NotBlank
     @Column(name= "password", nullable = false)
     private String password;
@@ -52,9 +49,6 @@ public class Employee {
     
     @Column(name = "address", nullable = false)
     private String address;
-    
-    // @Column(name = "marital_status", nullable = false)
-    // private String maritalStatus;
     
     @NotBlank
     @Column(name = "email", nullable = false)

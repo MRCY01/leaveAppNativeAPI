@@ -1,0 +1,18 @@
+MYSQL install:
+1. visit and download https://dev.mysql.com/downloads/workbench/ and https://dev.mysql.com/downloads/mysql/
+2. complete the setup for the MySql
+3. can visit this website and refer to the steps https://www.freecodecamp.org/news/how-to-install-mysql-workbench-on-windows/
+
+PREREQUISITE:
+1. Download sts from https://spring.io/tools/
+2. right click on the package Explorer and choose "import"
+3. locate and select the pom.xml file
+4. wait for the installation process finished
+
+HOW TO RUN THE CODE:
+1. Right click on the project
+2. select "Run as" -> "Maven clean"
+3. select "Run as" -> "Maven install"
+4. select "Run as" -> "Spring Boot App"
+
+

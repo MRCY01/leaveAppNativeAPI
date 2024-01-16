@@ -13,7 +13,7 @@ import com.cy.leaveAppNative.entity.LeaveRequested;
 public interface LeaveRequestRepository extends JpaRepository<LeaveRequested, Long> {
     // List<Employee> findByEmployee(Employee employee);
     List<LeaveRequested> findByEmpId(Employee employee);
-    Boolean existsByEmpIdAndApplyDate(Employee employee, String applyDate);
+    Boolean existsByEmpIdAndManagerApproveIsTrueAndApplyDate(Employee employee, String applyDate);
     List<LeaveRequested> findByManagerApproveIsNullAndEmpId_ManagerIdOrderBySubmitDateDesc( Long managerId);
     
 }
