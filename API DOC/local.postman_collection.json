@@ -1,0 +1,419 @@
+{
+	"info": {
+		"_postman_id": "6125fdd0-448c-49e0-9b3e-250f7ff68ab9",
+		"name": "local",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14696726"
+	},
+	"item": [
+		{
+			"name": "leaveAPP",
+			"item": [
+				{
+					"name": "admin",
+					"item": [
+						{
+							"name": "retrieveLeaveBalanceList",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJ1c2VySWQiOiIxIiwiaWF0IjoxNzA1MjE3MjIwLCJleHAiOjE3MDUzMDM2MjB9.rWcjk7MCgv2IZf7yC_bXLjPTiDxf0Q-x-dsgl2svdjM\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/admin/allUser/retrieveLeaveBalance",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"admin",
+										"allUser",
+										"retrieveLeaveBalance"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "retrieveEmployeeList",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJ1c2VySWQiOiIxIiwiaWF0IjoxNzA1MjQ1MDE3LCJleHAiOjE3MDUzMzE0MTd9.h3Vv3GRTXomYwRA6tLZLNaAGtKUD7LRL7t5hyZVim2c\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/admin/allUser/retrieveProfile",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"admin",
+										"allUser",
+										"retrieveProfile"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createLeaveBalance",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"leaveBalanceName\":\"Medical leave 2024\",\r\n    \"leaveType\":\"Medical Leave\",\r\n    \"balance\":\"14\",\r\n    \"expiryDate\":\"2024/12/31\",\r\n    \"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJ1c2VySWQiOiIxIiwiaWF0IjoxNzA1MjE3MjIwLCJleHAiOjE3MDUzMDM2MjB9.rWcjk7MCgv2IZf7yC_bXLjPTiDxf0Q-x-dsgl2svdjM\",\r\n    \"empEmail\":\"emp01@g.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/admin/leaveBalance/create",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"admin",
+										"leaveBalance",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createNewUser",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"emp01@g.com\",\r\n    \"active\": true,\r\n    \"empName\": \"emp01\",\r\n    \"password\": \"pass\",\r\n    \"address\": \"1,jln,981\",\r\n    \"bod\": \"1897/12/09\",\r\n    \"phone\": \"1-1111\",\r\n    \"manager\": \"2\",\r\n    \"role\": \"EMPLOYEE\",\r\n    \"status\": \"hired\",\r\n    \"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJ1c2VySWQiOiIxIiwiaWF0IjoxNzA1MjU2MjA5LCJleHAiOjE3MDUzNDI2MDl9.TSdfp8PRBFnl4XbllUJt6p25AD3jVplMUgjzlVoYxd4\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/admin/user/create",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"admin",
+										"user",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "retrieveLeaveList",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJ1c2VySWQiOiIxIiwiaWF0IjoxNzA1MjU2MjA5LCJleHAiOjE3MDUzNDI2MDl9.TSdfp8PRBFnl4XbllUJt6p25AD3jVplMUgjzlVoYxd4\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/admin/retrieveLeaveList",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"admin",
+										"retrieveLeaveList"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "employee",
+					"item": [
+						{
+							"name": "login",
+							"request": {
+								"auth": {
+									"type": "jwt",
+									"jwt": [
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										},
+										{
+											"key": "algorithm",
+											"value": "HS256",
+											"type": "string"
+										},
+										{
+											"key": "isSecretBase64Encoded",
+											"value": false,
+											"type": "boolean"
+										},
+										{
+											"key": "payload",
+											"value": "{}",
+											"type": "string"
+										},
+										{
+											"key": "headerPrefix",
+											"value": "Bearer",
+											"type": "string"
+										},
+										{
+											"key": "queryParamKey",
+											"value": "token",
+											"type": "string"
+										},
+										{
+											"key": "header",
+											"value": "{}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "// {\r\n//     \"loginEmail\":\"admin@gmail.com\",\r\n//     \"password\":\"pass\"\r\n// }   \r\n\r\n{\r\n    \"loginEmail\":\"manager@g.com\",\r\n    \"password\":\"pass\"\r\n}\r\n\r\n// {\r\n//     \"loginEmail\":\"emp01@g.com\",\r\n//     \"password\":\"pass\"\r\n// }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/employee/login",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"employee",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "profileUpdate",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"manager001\",\r\n  \"address\": \"manager Address, 78900\",\r\n  \"bod\": \"2024/01/01\",\r\n  \"phone\": \"011-289098\",\r\n  \"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYW5hZ2VyQGcuY29tIiwidXNlcklkIjoiMiIsImlhdCI6MTcwNTI4NDcwNCwiZXhwIjoxNzA1MzcxMTA0fQ.suuywrJ-_b_FzokJcb5cuzPs3CPmJQMA56FBUCuPJSs\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/employee/profile/update",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"employee",
+										"profile",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "viewProfile",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJ1c2VySWQiOiIxIiwiaWF0IjoxNzA0ODYzMzQxLCJleHAiOjE3MDQ5NDk3NDF9._mrt3AoPwPXvFEVOEC3nHbOKJaBcKYYSjW36P7vQEIk\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/employee/profile",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"employee",
+										"profile"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "applyLeave",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbXAwMUBnLmNvbSIsInVzZXJJZCI6IjMiLCJpYXQiOjE3MDUyNjEwNTksImV4cCI6MTcwNTM0NzQ1OX0.k3HvWp3FKNZS2hT20wvxEERVuxiR1F_GFk3VOdG-2rc\",\r\n    \"leaveBalance\": \"Annual Leave 2024\",\r\n    \"totalApplyDays\": \"2\",\r\n    \"leaveApplyDTOList\": [\r\n        {\r\n            \"reason\": \"try try\",\r\n            \"dateApply\": \"2024/3/10\",\r\n            \"halfDay\": \"NO\"\r\n        },\r\n        {\r\n            \"reason\": \"try try 2\",\r\n            \"dateApply\": \"2024/3/11\",\r\n            \"halfDay\": \"NO\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/employee/applyLeave",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"employee",
+										"applyLeave"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "manager",
+					"item": [
+						{
+							"name": "retrieveLeaveList",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYW5hZ2VyQGcuY29tIiwidXNlcklkIjoiMiIsImlhdCI6MTcwNTI2ODQ1OSwiZXhwIjoxNzA1MzU0ODU5fQ.zJmwE3CEKNhgCEj2AkxaN9ZJmA5QekwJUnLeXMbWki0\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/manager/retrieveLeaveList",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"manager",
+										"retrieveLeaveList"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "approve leave",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYW5hZ2VyQGcuY29tIiwidXNlcklkIjoiMiIsImlhdCI6MTcwNTI2MDk5MywiZXhwIjoxNzA1MzQ3MzkzfQ.tt_oWL-IkmVUBvoTQhXZZw4Q-TXvxKwHAp33IFb8eJI\",\r\n    \"leaveRequestId\":\"6\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/manager/leave/approve",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"manager",
+										"leave",
+										"approve"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "reject leave",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYW5hZ2VyQGcuY29tIiwidXNlcklkIjoiMiIsImlhdCI6MTcwNTI2ODQ1OSwiZXhwIjoxNzA1MzU0ODU5fQ.zJmwE3CEKNhgCEj2AkxaN9ZJmA5QekwJUnLeXMbWki0\",\r\n    \"leaveRequestId\":\"7\",\r\n    \"rejectReason\":\"guess xia\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/manager/leave/reject",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"manager",
+										"leave",
+										"reject"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
