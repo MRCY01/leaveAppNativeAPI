@@ -53,6 +53,7 @@ public class AdminRetrieveProfileService {
             }
 
             response.setEmployeeList(detailList);
+            response.setStatusCode("200");
             response.setMessage("successfully retrieve");
         }catch (ServiceException e){
             throw e;
